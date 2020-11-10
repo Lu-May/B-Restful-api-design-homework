@@ -3,10 +3,7 @@ package com.thoughtworks.capability.gtb.restfulapidesign.controller;
 import com.thoughtworks.capability.gtb.restfulapidesign.dto.Student;
 import com.thoughtworks.capability.gtb.restfulapidesign.service.StudentService;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class StudentController {
@@ -20,5 +17,11 @@ public class StudentController {
     @ResponseStatus(HttpStatus.CREATED)
     public Student addStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
+    }
+
+    @DeleteMapping("v1/students/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteStudent(@PathVariable int id) {
+        studentService.deleteStudent(id);
     }
 }

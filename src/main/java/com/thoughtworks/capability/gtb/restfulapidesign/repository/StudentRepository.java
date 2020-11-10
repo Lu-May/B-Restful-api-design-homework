@@ -18,4 +18,8 @@ public class StudentRepository {
         studentList.add(student);
         return student;
     }
+
+    public void deleteStudent(int id) {
+        studentList.remove(id - 1);
+    }
 }
