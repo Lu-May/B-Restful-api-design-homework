@@ -39,4 +39,13 @@ public class GroupRepository {
         }
         return groupList;
     }
+
+    public Group updateGroupName(int id, String groupName) {
+        groupList.get(id - 1).setName(groupName);
+        return getGroupById(id);
+    }
+
+    private Group getGroupById(int id) {
+        return groupList.get(id - 1);
+    }
 }

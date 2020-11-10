@@ -17,4 +17,8 @@ public class GroupService {
     public List<Group> getGroups() {
         return groupRepository.getGroups();
     }
+
+    public Group updateGroupName(int id, String groupName) {
+        return groupRepository.updateGroupName(id, groupName);
+    }
 }
