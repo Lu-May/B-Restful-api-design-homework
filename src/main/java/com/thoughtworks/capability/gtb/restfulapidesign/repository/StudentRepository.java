@@ -33,4 +33,8 @@ public class StudentRepository {
     public List<Student> getAllStudents() {
         return studentList;
     }
+
+    public Student getStudentsById(int id) {
+        return studentList.get(id - 1);
+    }
 }

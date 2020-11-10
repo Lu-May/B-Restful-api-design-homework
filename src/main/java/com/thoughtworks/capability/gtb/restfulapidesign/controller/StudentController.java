@@ -15,20 +15,25 @@ public class StudentController {
         this.studentService = studentService;
     }
 
-    @PostMapping("v1/students")
+    @PostMapping("/v1/students")
     @ResponseStatus(HttpStatus.CREATED)
     public Student addStudent(@RequestBody Student student) {
         return studentService.addStudent(student);
     }
 
-    @DeleteMapping("v1/students/{id}")
+    @DeleteMapping("/v1/students/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteStudent(@PathVariable int id) {
         studentService.deleteStudent(id);
     }
 
-    @GetMapping("v1/students")
+    @GetMapping("/v1/students")
     public List<Student> getStudents(@RequestParam(required = false) String gender) {
         return studentService.getStudents(gender);
+    }
+
+    @GetMapping("/v1/students/{id}")
+    public Student getStudentById(@PathVariable int id) {
+        return studentService.getStudentsById(id);
     }
 }
