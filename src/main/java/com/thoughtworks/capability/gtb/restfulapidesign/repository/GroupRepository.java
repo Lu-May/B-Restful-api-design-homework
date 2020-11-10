@@ -45,7 +45,7 @@ public class GroupRepository {
         return getGroupById(id);
     }
 
-    private Group getGroupById(int id) {
+    public Group getGroupById(int id) {
         return groupList.get(id - 1);
     }
 }
